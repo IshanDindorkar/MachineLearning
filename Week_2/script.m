@@ -85,11 +85,61 @@ subplot(1,2,2);
 
 # Changing axes of plot
 axis([0.5 1 -1 1])
+
+# Plot values of matrix
 A = magic(6)
-A
 imagesc(A)
 
-# Fix range of colors
+# Fix range of colors to gray shades
 imagesc(A), colorbar, colormap gray
 
+# Control statements ....
+# for loop ...
 
+v = zeros(10,1)
+for i=1:10,
+  v(i) = 2^i;
+end;
+v
+
+# using indices to access elements of an array
+indices = 1:10;
+for i = indices,
+  disp(v(i)); # "disp" is used to print values
+end;
+
+# use of while loop ...
+
+i = 1;
+while true,
+  disp(999);
+  i = i + 1;
+  if i == 6,
+    break;
+  end;
+end;
+
+# Using if-else construct ...
+a = 1;
+if a == 2,
+  disp('value of a is 2');
+elseif a == 1,
+  disp('value of a is 1');
+else
+  disp('value of a is unknown');
+end;
+
+# Call user-defined functions
+squareThisNo(9);
+
+# Call user-defined function returning multiple values
+[y1, y2] = squareAndCubeNumber(5);
+disp(y1)
+disp(y2)
+
+# Invoke costFunction
+X = [1 1; 1 2; 1 3];
+y = [1; 2; 3];
+theta = [0;1];
+j = costFunction(X,y,theta);
+disp(j);
