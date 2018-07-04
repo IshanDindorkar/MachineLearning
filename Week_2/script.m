@@ -70,4 +70,26 @@ xlabel('time')
 ylabel('value')
 legend('ishan', 'dindorkar')
 
+# Saving plot on local memory
+cd 'C:\Machine_Learning\Week_2'; print -dpng 'myPlot.png'
+close
+
+# Open 2 plots simultanoulsy in 2 windows
+figure(1); plot(t, y1);
+figure(2); plot(t, y2);
+
+# Create a subplot out of the current plot
+subplot(1,2,1);
+plot(t, y1);
+subplot(1,2,2);
+
+# Changing axes of plot
+axis([0.5 1 -1 1])
+A = magic(6)
+A
+imagesc(A)
+
+# Fix range of colors
+imagesc(A), colorbar, colormap gray
+
 
