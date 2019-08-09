@@ -27,6 +27,11 @@ rdd = lines.map(parseLine)
 # Calculating total friend count for every unique age
 totalsByAge = rdd.mapValues(lambda x: (x, 1)) \
                 .reduceByKey(lambda x, y: (x[0] + y[0], x[1] + y[1]))
+
+# Output of map ...
+# (33, 385) - ((33, 385), 1)
+# (26, 2) - ((26, 2), 1)
+
 # Output of mapValues ...
 # (33, 385) - (33, (385, 1))
 # (33, 2) - (33, (2, 1))
