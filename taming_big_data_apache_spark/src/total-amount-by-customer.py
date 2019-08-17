@@ -28,7 +28,7 @@ customer_amount_agg_RDD = customer_amount_RDD.reduceByKey(lambda x, y: x + y)
 
 # Sort results by amount spent by customer
 customer_amount_swapped_RDD = customer_amount_agg_RDD.map(lambda x: (x[1], x[0]))
-customer_amount_sorted_RDD = customer_amount_swapped_RDD.sortByKey()
+customer_amount_sorted_RDD = customer_amount_swapped_RDD.sortByKey(False)
 results = customer_amount_sorted_RDD.collect()
 
 # Printing results
